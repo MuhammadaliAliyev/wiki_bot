@@ -16,7 +16,7 @@ dp = Dispatcher(bot)
 
 @dp.message_handler(commands=['start'])
 async def send_welcome(message: types.Message):
-    await message.reply("Assalomu alaykumm!\nWikipedia botga xush kelibsiz!")
+    await message.reply("Assalomu alaykum!\nWikipedia botga xush kelibsiz!")
 
 @dp.message_handler(commands=['help'])
 async def send_welcome(message: types.Message):
