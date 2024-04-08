@@ -1,8 +1,14 @@
 import logging
 import wikipedia
 from aiogram import Bot, Dispatcher, executor, types
+from environs import Env
 
-API_TOKEN = '5918389355:AAGFs11OLlJ3xUedCBA6pUy302RZJHg_xxo'
+# environs kutubxonasidan foydalanish
+env = Env()
+env.read_env()
+
+# .env fayl ichidan quyidagilarni o'qiymiz
+BOT_TOKEN = env.str("BOT_TOKEN")  # Bot token
 
 wikipedia.set_lang("uz")
 
@@ -10,7 +16,7 @@ wikipedia.set_lang("uz")
 logging.basicConfig(level=logging.INFO)
 
 # Initialize bot and dispatcher
-bot = Bot(token=API_TOKEN)
+bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher(bot)
 
 
